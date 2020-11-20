@@ -1,5 +1,5 @@
 # ROS_BOOTCAMP
-This Repository includes introduction to ROS and its basic terminologies
+This Repository includes introduction to ROS,its basic terminologies and few basic commands
 
 **a) what is  ROS? its advantages? its limitations?**
 
@@ -64,4 +64,27 @@ This Repository includes introduction to ROS and its basic terminologies
 *SERVICES*: Avails request/reply interactions in distributed systems 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+***Publisher Node and Subscriber Nodes***:
 
+----------------------------------------------------------
+
+*Publisher Node publish or sends messages of any datatype to subscriber Node through a specific topic. 
+
+*Subscriber node requests a connection to publisher through the same specific topic and a list of protocols. The subscriber then establishes a *separate* connection when The publisher  selects a protocol from that list.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+***Few Basic Commands*** :
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+**roscore* : will start up a ROS Master,a ROS parameter server and  rosout
+
+**rosrun*: rosrun can be used to run a executable in a specified package 
+
+**rostopic list*: it is used to to display topic's runtime information
+
+**rostopic echo*:it is used to display topic related info
+
+**rosmsg show*: it is used to check message transmitted and also to display the fields in a ROS massage 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
