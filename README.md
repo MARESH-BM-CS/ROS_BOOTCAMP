@@ -1,5 +1,5 @@
 # ROS_BOOTCAMP
-This Repository includes introduction to ROS,its basic terminologies and few basic commands
+This Repository includes introduction to ROS,its basic terminologies,few basic commands,few concepts in ROS,turtlebot in gazebo(3D simulator for robot)
 
 **a) what is  ROS? its advantages? its limitations?**
 
@@ -78,13 +78,102 @@ This Repository includes introduction to ROS,its basic terminologies and few bas
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-**roscore* : will start up a ROS Master,a ROS parameter server and  rosout
+*roscore* : 
+    will start up a ROS Master,a ROS parameter server and  rosout
 
-**rosrun*: rosrun can be used to run a executable in a specified package 
+*rosrun*: 
+    rosrun can be used to run a executable in a specified package 
 
-**rostopic list*: it is used to to display topic's runtime information
+*rostopic list*: 
+    it is used to to display topic's runtime information
 
-**rostopic echo*:it is used to display topic related info
+*rostopic echo*:
+    it is used to display topic related info
 
-**rosmsg show*: it is used to check message transmitted and also to display the fields in a ROS massage 
+*rosmsg show*: 
+    
+    it is used to check message transmitted and also to display the fields in a ROS massage
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+***Some concepts in ROS:***
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**ROS navigation stack*:
+
+It takes data stored in odometry and sensors streams and sends to the moving base of the bot. Then the bot is able to know path in its environment automatically from one point to another.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Localization and sensors used in Localization*: 
+
+Localization is the process of estimating the position of the robot with respect to its environment.
+Robot localization in ROS is done using AMCL(Adaptive Monte-Carlo Localization) in 3D it uses radio-range sensors and laser sensors
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**mapping*: 
+
+It is the process of designing the robot's environment using sensors data like obstacles and path 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**tf in ROS and its use*:
+
+*tf in ROS is a package which keeps track of multiple 3D coordinate frames over time. 
+
+*tf is used to recieve and buffer all coordinate frames that are broadcasted in the system and can be used later to send out the relative pose of coordinate frames to the rest of the system.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**SLAM problem*:
+
+*SLAM ->Simultaneous Mapping And Localization 
+
+*SLAM problem is like a chicken-or-egg problem: 
+
+-> a map is needed for localization and 
+
+->a pose estimate is needed for mapping 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+***Experiments on turtlebot robot in gazebo***:
+------------------------------------------------
+
+*spawned turtlebot robot in gazebo
+
+*sensors info:
+
+1).odometry:
+
+​				topic name: /odom
+
+​				publisher:*/gazebo(http://rosdscomputer:39789/)
+
+​				subscriber: None
+
+​				message Type: nav_msgs/Odometry
+
+2).Kobuki Laser Scan Data(LIDAR):
+
+
+​				topic name: /kobuki/laser/scan 
+
+​				publisher: * /gazebo (http://rosdscomputer:39789/)
+
+​				subscriber: None
+
+​				message Type: sensor_msgs/LaserScan
+
+3).RGB Camera info:
+
+​				topic name: /camera/rgb/camera_info
+
+​				publisher: * /gazebo (http://rosdscomputer:39789/)
+
+​				subscriber: None
+
+​				message Type: sensor_msgs/CameraInfo
+
+
+
+
