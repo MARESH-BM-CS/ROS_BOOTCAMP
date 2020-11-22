@@ -91,11 +91,10 @@ This Repository includes introduction to ROS,its basic terminologies,few basic c
     it is used to display topic related info
 
 *rosmsg show*: 
-    
     it is used to check message transmitted and also to display the fields in a ROS massage
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-***Some concepts in ROS:***
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+***Few concepts in ROS:***
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **ROS navigation stack*:
@@ -136,6 +135,33 @@ It is the process of designing the robot's environment using sensors data like o
 ->a pose estimate is needed for mapping 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**AMCL*:
+
+AMCL implements particle filter using the information taken from the LaserScan,Lasermap and odometry info to to track the pose of a robot against a known map.
+
+AMCL has many configurations options that will affect the performance of Localization. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**GMapping*:
+
+Gmapping is a package in ROS which provides laser-based SLAM(Simultaneous Localization and Mapping),using a topic called slam_gmapping(which takes in sensor_msgs/LaserScan message to build a map )
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Global Cost Map and Local Cost Map*:
+
+costmaps are used to store obstacles information for robot in the environment.
+
+the information will be about the obstacle range and also the free space range 
+
+costmaps are of two types: Global costmap which is for creating large term plan for obstacles in entire invironment and Local Cost Map is for short term plan.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Obstacle inflation*:
+
+Obstacle Inflation is the process of propagating cost values out from occupied cells that decrease with distance
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ***Experiments on turtlebot robot in gazebo***:
 ------------------------------------------------
 
@@ -173,6 +199,8 @@ It is the process of designing the robot's environment using sensors data like o
 ​				subscriber: None
 
 ​				message Type: sensor_msgs/CameraInfo
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
